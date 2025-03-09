@@ -11,7 +11,6 @@ public class WebCrawler {
     private final String domain;
     private final Set<String> visitedUrls;
     private final Queue<String> urlQueue = new LinkedList<>();
-    //private final RobotsHandler robotsHandler;
 
     private static final List<String> PRODUCT_PATTERNS = Arrays.asList(
             "/product/", "/item/", "/p/", "/shop/"
@@ -20,7 +19,6 @@ public class WebCrawler {
     public WebCrawler(String domain, Set<String> visitedUrls) {
         this.domain = domain;
         this.visitedUrls = visitedUrls;
-        //this.robotsHandler = new RobotsHandler(domain);
         urlQueue.add(domain);
     }
 
