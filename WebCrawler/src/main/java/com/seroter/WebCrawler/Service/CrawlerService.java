@@ -18,9 +18,6 @@ public class CrawlerService {
 
     public void startCrawling(List<String> domains) {
         for (String domain : domains) {
-            new WebCrawler(domain, visitedUrls).crawl(domain);
-        }
-        for (String domain : domains) {
             executor.submit(() -> new WebCrawler(domain, visitedUrls).crawl(domain));
         }
         executor.shutdown();
